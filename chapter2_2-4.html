@@ -32,18 +32,20 @@
         // var b=false;
         // var c=10>5;
         // var d=Boolean(null)
-        // var d=Boolean("null")
+        // var d=Boolean("null") null이라는 문자형으로 인식
         // document.write(d)
 
-        // var s;
+        var s;
         // var t=hello;
-        // t=null;
+        t=null;
         // document.write(t);
 
         var num=100;
-        var str="자바스크립트";
-        document.write(typeof num,"<br>");
-        document.write(typeof str);
+        // 태그삽입 가능/ 태그 인식 가능
+        var str="<h1>안녕</h1>";
+        // null을 typeof로 반환하면 object로 출력
+        document.write(typeof t,"<br>");
+        document.write(str);
     </script>
 </head>
 <body>
