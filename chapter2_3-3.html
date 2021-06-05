@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 - 대입연산자</title>
+    <script>
+        /*대입연산 기초*/
+        var num1 = 10;
+        var num2 = 3;
+
+        num1 += num2; //num1=num1+num2;
+        document.write(num1, "<br/>"); //13
+
+        num1 -= num2; //num1=(위에 num1값)num1-num2 => 13-3=10
+        document.write(num1,"<br/>"); //10
+
+        num1 *=num2;
+        document.write(num1, "<br/>"); //10*3=30
+
+        num1 /= num2;
+        document.write(num1, "<br/>"); //10
+
+        /*대입연산- table 태그 만들기=>다 문자형으로 기록하지만 결론은 태그로 인식*/
+        var str="<table border='1'>";
+        str += "<tr>"; //str= str+"<tr>" => <table border='1'>+<tr>
+        str += "<td>1</td><td>2</td><td>3</td>"; 
+        str += "</table>";
+        
+        document.write(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
