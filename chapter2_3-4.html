@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 - 증감연산자</title>
+    <script>
+        var num1=10;
+        var num2=20;
+        var result;  //undefined
+
+        num1--;  
+        document.write(num1,"<br>");  //9
+
+        num1++; //num1=9
+        document.write(num1, "<br>");  //10
+
+        result=num2++;  //후이연산자로 대입먼저 result는 대입한 값만 출력. num2는 20+1로 값이 출력.
+        document.write(result,"<br>"); //20
+        document.write(num2,"<br>");  //21
+
+        result=++num2; //21+1먼저 하구 result에 대입
+        document.write(result,"<br>");  //22
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

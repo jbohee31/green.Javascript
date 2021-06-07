@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적정체중 구하기</title>
+    <script>
+        var userHeight = 180; // 신장
+        var userWeight = 74; //몸무게
+
+        var normal_w= (userHeight - 100) * 0.9; //적정체중= (신장-100)*0.9
+        // document.write(normal_w,"<br>");
+
+        //적정 체중 코드 작성하기-prompt("질문", "기본응답")->질의응답 창;
+        var name = prompt("당신의 이름은?", "");
+        var height = prompt("당신의 신장은?", "cm");
+        var weight = prompt("당신의 몸무게는?","kg");
+        
+        var normal_w = (userHeight - 100) * 0.9; //적정체중 구하는 식
+        var result = weight >= normal_w -5 && weight <= normal_w +5; //오차범위 식. result 식 설정
+        result = result ? "적정 체중입니다.":"적정 체중이 아닙니다.";
+        
+        var str= "<h1>몸무게 계산기</h1>";
+            str += "<table border='1'>";
+            str +="<tr>";
+            str +="<td>이름</td><td>신장</td><td>몸무게</td><td>평균체중</td><td>결과</td>";
+            str +="</tr>";
+            str +="<tr>";
+                //변수는 ""안에 있으면 문자로 인식해 변수로 인식하게 하려면 태그와 +시켜서 인식
+            str +="<td>"+name+"</td><td>"+height+"</td><td>"+weight+"</td><td>"+normal_w+"</td><td>"+result+"</td>";
+            str +="</tr>";
+            str +="</table>";
+            document.write(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
