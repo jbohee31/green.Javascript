@@ -28,7 +28,7 @@
         // tv.info();  ///객체의 메서드 호출
         // document.write("<h1>car 객체 메서드 호출</h1>");
         // car.info();  //객체2의 메서드 호출
-
+// ==================================================================
         //날짜 정보 객체 예제.
         // 날짜 객체는 js에서 제공하는 객체 사용
         // var today = new Date();
@@ -50,7 +50,7 @@
         // document.write("2002 월드컵 몇 월: " + theMonth, "<br>");
         // document.write("2002 월드컵 몇 일: " + theDate, "<br>");
         // document.write("2002 월드컵 무슨 요일: " + theDay, "<br>");
-    
+// ========================================================================    
         // 밀리초 계산 예제, d-day계산 
         // var today = new Date();  //객체 생성
         // var nowYear = today.getFullYear(); //올해 년도 호출
@@ -60,7 +60,7 @@
 
         // var result = Math.ceil( diffDate / (60 * 1000 * 60 * 24));  //밀리초 계산
         // document.write("연말 D-day: " + result + "일 남았습니다.");
-        
+// ============================================================================        
         // 수학 객체 예제
         // var num = 2.1234;
 
@@ -79,31 +79,138 @@
         // document.write(ceilNum, "<br>");
         // document.write(rndNum, "<br>");
         // document.write(piNum, "<br>");
-        
+// ===============================================================================        
         // 수학 객체 예제_2
-        document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+        // document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
 
-        var game = prompt("가위, 바위, 보 중에 선택하세요.", "");
-        var gameNum;  //undefined
+        // var game = prompt("가위, 바위, 보 중에 선택하세요.", "");
+        // var gameNum;  //undefined
         
-        switch(game){
-            case "가위": gameNum = 1;
-            break;
-            case "바위" : gameNum = 2;
-            break;
-            case "보" : gameNum = 3;
-            break;
-            default: alert("잘 못 작성하셨습니다.");
-            location.reload();
-        }
-        var com = Math.ceil(Math.random()*3);
-        document.write("<img src=\"math_img_" + com + ".jpg\">");  // \을 사용하면 쌍따옴표를 이중으로 사용가능하다
+        // switch(game){
+        //     case "가위": gameNum = 1;
+        //     break;
+        //     case "바위" : gameNum = 2;
+        //     break;
+        //     case "보" : gameNum = 3;
+        //     break;
+        //     default: alert("잘 못 작성하셨습니다.");
+        //     location.reload();
+        // }
+        // var com = Math.ceil(Math.random()*3);
+        // document.write("<img src=\"math_img_" + com + ".jpg\">");  // \을 사용하면 쌍따옴표를 이중으로 사용가능하다
         
-        if(gameNum == com){
-            document.write("<img src='game_ + com + '.jpg'>");
-        } else{
-            document.write("<img src=\"game_" + com + ".jpg\">");
-        }
+        // if(gameNum == com){  //사용자가 입력한 것과 랜덤이 같은 지 판단
+        //     document.write("<img src=\"game_1.jpg\">");  //같을 때
+        // } else{
+        //     document.write("<img src=\"game_2.jpg\">");  //다를 때
+        // }
+// ==============================================================================
+        // 배열 객체 ***************************
+        // 배열 객체 출력하는 방법_1
+        // var arr = [30, "따르릉", true];
+
+        // document.write("<h3>배열값 가져오기_1</h3>");
+        // document.write(arr[0], "<br>");
+        // document.write(arr[1], "<br>");
+        // document.write(arr[2], "<br>");
+
+        // // 배열 객체 출력하는 방법_2
+        // document.write("<h3>배열값 가져오기_2</h3>");
+        // for(var i = 0; i < arr.length; i++){ //for문 이용/ arr.length는 배열이 총 데이터 갯수를 반환. 즉 3.
+        //     document.write(arr[i],"<br>");  //i가 3이 되기 전까지 계속 증감하면서 반복.
+        // }
+
+        // 배열 객체 출력하는 방법_3
+        // document.write("<h3>배열값 가져오기_3</h3>");
+        // for( i in arr){  //== arr안에 있는 데이터 들을 i에 넣어주겠다./ index 0-2까지 대입
+        //     document.write(arr[i], "<br>");
+        // }
+// ================================================================================
+        // 배열 객체 메서드 예제_1
+        // var arr_1 = ["사당","교대","방배","강남"];  //index 0.1.2.3
+        // var arr_2 = ["신사","압구정","옥수"];  //index 0.1.2
+
+        // var result = arr_1.join("-");  //"-"로 해당하는 배열의 데이터들을 문자열로 반환한다. 문자로 구성되있지 않아도 문자열로 반환.
+        // console.log(result);  //브라우저에 출력이 아니라 console에만 출력
+
+        // result = arr_1.concat(arr_2);  // 먼저 오는 배열 + 뒤에 오는 배열로 데이터들을 합쳐서 반환한다.
+        // console.log(result); 
+
+        // result = arr_1.slice(1,3);  // index 1=교대부터 index 3=강남전까지 반환. 앞에 있는 index부터 뒤에 있는 숫자 index -1까지 반환.
+        // console.log(result);
+
+        // 배열
+        // arr_1.sort();  //오름차순으로 해당 배열을 반환한다. 여기서는 가나다순
+        // console.log(arr_1);
+
+        // arr_2.reverse();  //해당 배열의 순을 뒤집는다. 
+        // console.log(arr_2);
+// =========================================================================
+        // // 배열 객체 메서드 예제_2
+        // var greenArr = ["교대","방배","강남"];
+        // var yellowArr = ["미금","정자","수서"];
+
+        // greenArr.splice(0,3,"서초","서초","서초","서초","서초","역삼"); 
+        // //첫번째 index를 선택해서 그 해당하는 index 앞에 추가한다.
+        // //두번쨰 index: 삭제할 갯수. 첫번재 index 번호를 기준으로 순서대로 삭제할 갯수를 지정한다.  
+        // console.log(greenArr);
+
+        // var data1 = yellowArr.pop(); //yellowArr에서 제일 마지막 데이터(="수서")를 data1에 저장. 
+        // //data1을 변수로 지정안해주면 그냥 pop해서 나온 "수서"는 증발. 
+        // var data2 = yellowArr.shift(); //yellowArr에서 제일 앞에 데이터(="미금")를 data2에 저장.
+
+        // yellowArr.push(data2);  //위에 data2에 저장했던 데이터를 yellowArr의 마지막에 이어붙인다.
+        // console.log(yellowArr);
+
+        // yellowArr.unshift(data1); //위에 data1에 저장했던 데이터를  yellowArr의 처음에 이어붙인다. 
+        // console.log(yellowArr);
+// =========================================================================
+        // 문자열 배열
+        // var t = "Hello Thank You Good Luck To You";  //인덱스 번호는 띄어쓰기 포함해서 지정한다.
+        // document.write(t.charAt(16), "<br>");  //index 16번에 있는 문자열을 반환.
+        // document.write(t.indexOf("You"),"<br>"); // "You"라는 문자가 처음 발견되는 인덱스 값을 반환.
+        // //해당 문자열이 없으면 "null"로 반환.
+        // document.write(t.indexOf("You", 16), "<br>"); // 인덱스 16번째 이후에 "You"라는 문자가 처음 발견되는 인덱스 값 반환.
+        // document.write(t.lastIndexOf("You"),"<br>");  //뒤에서 부터 "You"가 발견된 인덱스 값을 반환.
+        // document.write(t.lastIndexOf("You",25),"<br>");  //뒤에서 부터 인덱스 25번째 이전에 "You"가 발견되는 인덱스 값을 반환.
+        // document.write(t.match("Luck"),"<br>"); // "Luck"이 처음 발견되는 문자를 반환.
+        // document.write(t.search("Luck"),"<br>");  //"Luck"이 처음 발견되는 인덱스 값을 반환.
+        
+        // document.write(t.substr(21,7),"<br>"); // 인덱스 21번 이후로 7개의 인덱스 값을 문자로 반환.
+        // document.write(t.substring(6,12),"<br>");  //substr와는 다르게 인덱스 6 값부터 인덱스 12 값 이전까지의 문자를 반환.
+        // document.write(t.replace("You", "me"),"<br>"); //"You"를 "me"로 대체해서 반환.but 첫번째 발견되는 것만.
+        
+        // document.write(t.toLowerCase(),"<br>"); //소문자로 
+        // document.write(t.toUpperCase(),"<br>"); //대문자로
+
+        // document.write(t.length,"<br>"); //전체 문자 갯수를 반환
+
+        // var s = t.split(" ");  //띄어쓰기를 기준으로 문자를 분리해서 다시 인덱스 번호를 지정한다.
+        // //Hello = 0, Thank = 1, You = 2, Good = 3, Luck = 4, To = 5, You = 6
+        // document.write(s[0], "<br>");  //Hello를 반환
+        // document.write(s[4],"<br>");  //Luck를 반환
+
+        // var str = "A";
+        // var t = str.charCodeAt(0);  //아스키 코드값을 변수로 지정
+        // document.write(t,"<br>");  //아스키 코드값을 출력
+        // document.write(String.fromCharCode(65),"<br>");  //다시 우리가 알아볼수 있는 "A"로 출력.
+// ==========================================================================
+        // 방문자 영문이름과 번호 출력 예제
+        // var userName =  prompt("당신의 영문 이름은?", "");
+        // var upperName = userName.toUpperCase();  // 입력받은 영문이름을 대문자로 해서 저장하는 변수 지정.
+        // document.write(upperName, "<br>"); //대문자로 바꿔서 출력
+
+        // var userNum = prompt("당신의 연락처는?", ""); 
+        // var result = userNum.substring(0,userNum.length - 4) + "****";  //입력받은 연락처의 인덱스 0부터 (9-4=5)5이전까지 값+"****"를 저장하는 변수 지정
+        // document.write(result,"<br>");
+// ========================================================================
+        // 이메일 주소 출력 예제
+        var userEmail = prompt("당신의 이메일 주소는?", "");
+        var arrUrl = [".co.kr",".com",".net",".or.kr", "go.kr"];
+
+        var check1 = false;
+        var check2 = false;
+
         </script>
 </head>
 <body>
