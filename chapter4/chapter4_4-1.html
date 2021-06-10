@@ -4,7 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>객체</title>
+    <title>내장 객체</title>
+    <script>
+        // 객체 생성
+        // var tv = new Object();
+        // tv.color = "white";   //객체의 속성을 지정
+        // tv.price = 300000;
+        // tv.info = function(){   //객체의 메서드(함수)를 생성.
+        //     document.write("tv 색상: " + this.color,"<br>");
+        //     document.write("tv 가격: " + this.price, "<br>");
+        // }
+
+        // var car = {  //객체의 메서드 생성2
+        //     color: "black",
+        //     price: 500000,
+        //     info: function(){
+        //         document.write("car 색상: " + this.color, "<br>");
+        //         document.write("car 가격: " + this.price, "<br>");
+        //     }
+        // };
+
+        // document.write("<h1>tv 객체 메서드 호출</h1>");
+        // tv.info();  ///객체의 메서드 호출
+        // document.write("<h1>car 객체 메서드 호출</h1>");
+        // car.info();  //객체2의 메서드 호출
+
+        //날짜 정보 객체 예제.
+        // 날짜 객체는 js에서 제공하는 객체 사용
+        // var today = new Date();
+        // var nowMonth = today.getMonth();
+        // nowDate = today.getDate(),
+        // nowDay = today.getDay();
+
+        // document.write("<h1>오늘 날짜 정보</h1>");
+        // document.write("현재 월: " + nowMonth ,"<br>");
+        // document.write("현재 일: " + nowDate, "<br>");
+        // document.write("현재 요일: " + nowDay, "<br>");
+
+        // var worldcup = new Date(2002,4,31);   //특정 날짜로 객체를 지정할 수 있다. 
+        // var theMonth = worldcup.getMonth(),
+        // theDate = worldcup.getDate(),
+        // theDay = worldcup.getDay();
+
+        // document.write("<h1>월드컵 날짜 정보</h1>");
+        // document.write("2002 월드컵 몇 월: " + theMonth, "<br>");
+        // document.write("2002 월드컵 몇 일: " + theDate, "<br>");
+        // document.write("2002 월드컵 무슨 요일: " + theDay, "<br>");
+    
+        // 밀리초 계산 예제, d-day계산 
+        // var today = new Date();  //객체 생성
+        // var nowYear = today.getFullYear(); //올해 년도 호출
+
+        // var theDate = new Date(nowYear,11,31);  //올해 연말에 대한 날짜 정보 객체 생성
+        // var diffDate = theDate.getTime() - today.getTime();  //(2021,11,31) - (2021,6,10)
+
+        // var result = Math.ceil( diffDate / (60 * 1000 * 60 * 24));  //밀리초 계산
+        // document.write("연말 D-day: " + result + "일 남았습니다.");
+        
+        // 수학 객체 예제
+        // var num = 2.1234;
+
+        // var maxNum = Math.max(10,5,8,30),   //최댓값
+        // minNum = Math.min(10,5,8,30),    //최솟값
+        // roundNum = Math.round(num),   //소수점 첫째 자리 반올림
+        // floorNum = Math.floor(num),  //소수점 첫째 자리 내림
+        // ceilNum = Math.ceil(num),   //소수점 첫째 자리 올림
+        // rndNum = Math.random(),   //랜덤(0-1 까지)
+        // piNum = Math.PI;  //원주율
+
+        // document.write(maxNum, "<br>");
+        // document.write(minNum, "<br>");
+        // document.write(roundNum, "<br>");
+        // document.write(floorNum, "<br>");
+        // document.write(ceilNum, "<br>");
+        // document.write(rndNum, "<br>");
+        // document.write(piNum, "<br>");
+        
+        // 수학 객체 예제_2
+        document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+
+        var game = prompt("가위, 바위, 보 중에 선택하세요.", "");
+        var gameNum;  //undefined
+        
+        switch(game){
+            case "가위": gameNum = 1;
+            break;
+            case "바위" : gameNum = 2;
+            break;
+            case "보" : gameNum = 3;
+            break;
+            default: alert("잘 못 작성하셨습니다.");
+            location.reload();
+        }
+        var com = Math.ceil(Math.random()*3);
+        document.write("<img src=\"math_img_" + com + ".jpg\">");  // \을 사용하면 쌍따옴표를 이중으로 사용가능하다
+        
+        if(gameNum == com){
+            document.write("<img src='game_ + com + '.jpg'>");
+        } else{
+            document.write("<img src=\"game_" + com + ".jpg\">");
+        }
+        </script>
 </head>
 <body>
     
