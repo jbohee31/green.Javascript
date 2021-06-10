@@ -211,6 +211,20 @@
         var check1 = false;
         var check2 = false;
 
+        //userEmail에 @가 있는 지 없는지 판단하는 식
+        if(userEmail.indexOf("@") > 0){ check1 = true;}
+        //@가 없으면 숫자 -1을 가지기 때문에 만약 @가 0보다 크다면 check1은 true이다.
+        for(var i = 0; i < arrUrl.length; i++){  //arrUrl.length은 5.
+            if(userEmail.indexOf(arrUrl[i]) > 0) {  //입력한 이메일에 i에 해당하는 것들이 있을 때 check2 = true
+                //그럼 다시 i가 증감해서 5가 될때까지 식 반복한다. 
+                check2 = true; 
+            } 
+        }
+        if(check1 && check2){//둘다 true일때
+            document.write(userEmail);
+        } else{
+            alert("이메일 형식이 잘 못 되었습니다.");
+        }
         </script>
 </head>
 <body>
