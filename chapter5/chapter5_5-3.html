@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 스코프 개념</title>
+    <script>
+        // 예제_1
+        // var score = 10; //전역변수
+
+        // function myFnc(){
+        //     var score = 50;  //지역변수  **전역변수와 지역변수 변수 이름이 같아도 다른 변수이다.
+        //     alert(score);  //score은 지역변수인 50을 적용
+        // }
+        // myFnc();  //전역함수
+        // alert(score);  //score는 전역변수인 10을 적용
+
+        // 예제_2
+        // 개발자_1
+        var num = 100;
+        function menu (){ //개발자_1의 예상결과는 200이지만 실상 100으로 나온다.(개발자_2의 코드와 뒤엉켰기 때문에)
+            num += 100;
+            alert(num);
+        }
+        menu();
+        // 개발자_2
+        function menu(){
+            alert(num);
+        }
+
+        // 예제_3(예제_2를 보완한 코드)
+        // 개발자_1
+        (function(){  //단순히 함수의 스코프를 나누기 위한 수단. 침범을 막기 위해
+            var num = 100;
+            function menu(){
+                num += 100;
+                alert(num);
+            }
+            menu();
+        })
+        // 개발자_2
+        (function(){
+            var num = 100;
+            function menu(){
+                alert(num);
+            }
+        })
+
+        // 두 가지 코드의 num은 다른 것이다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

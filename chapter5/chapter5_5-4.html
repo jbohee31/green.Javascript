@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성자 함수</title>
+    <script>
+        // 예제_1
+        // (1) 객체 생성/ 첫글자를 대문자로 해주기로 약속.(함수와 구분하기 위해) 
+        // 객체: 메소드(기능 or 함수)와 프로퍼티(속성)으로 구성
+        //객체 생성시 name, height, weight를 받음
+        function CheckWeight(name, height, weight){ 
+            //안에는 속성(경우에 따라 없을 수 있다)과 함수가 구성된다.
+            //(속성)
+            this.userName = name;  //this = 객체자체(CheckWeight)
+            //정의한 속성에 해당 값을 넣어준다. 
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;  
+            this.maxWeight;
+
+            //(함수)/ 매개변수를 넣어줄 수 있다. 
+            this.getInfo = function(){   //구성: '해당객체=this.함수이름 = function()'
+                var str = ""
+                //변수 str에 문자열을 추가해서 값을 넣어줌
+                    str += "이름: " + this.userName + ",";  
+                    //위에 속성에 name과 같지만 객체함수에서는 정확히 객체속성을 지정한 이름을 넣어주는 것이 best
+                    str += "키: " + this.userHeight + ",";
+                    str += "몸무게: " + this.userWeight + "<br>";
+                    return str;
+            }
+            this.getResult = function(){  //몸무게 오차범위 구하는 식
+                this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+                this.minWeight = (this.userHeight - 100) * 0.9 + 5;
+
+                // 몸무게 오차범위 적용해서 출력
+                if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight){ 
+                    return "정상 몸무게 입니다";
+                }  else if(this.userWeight < this.maxWeight){
+                    return "정상 몸무게보다 미달입니다.";
+                } else{
+                    return "정상 몸무게보다 초과입니다.";
+                }
+            }
+        }
+        // (2) 생성된 객체 사용 방법
+        var jang =  new CheckWeight("장보리",168,62);
+        var park = new CheckWeight("박달재",180,88);
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(jang.getResult());
+        document.write("<br>");
+        document.write(park.getInfo());
+        document.write(park.getResult());
+    </script>
+    <!-- (2)객체를 생성할때 프로토타입으로 함수를 등록하는 예제 -->
+    <!-- <script>
+        function CheckWeight(name, height, weight){
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+
+            this.getInfo = function(){
+                var str = ""
+                str += "이름: " + this.userName + ",";
+                str += "키: " + this.userHeight + ",";
+                str += "몸무게: " + this.userWeight + "<br>";
+                return str;
+            }
+            this.getResult = function(){
+                this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+                this.minWeight = (this.userHeight - 100) * 0.9 + 5;
+
+                if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight){
+                    return "정상 몸무게 입니다";
+                }  else if(this.userWeight < this.maxWeight){
+                    return "정상 몸무게보다 미달입니다.";
+                } else{
+                    return "정상 몸무게보다 초과입니다.";
+                }
+            }
+        }
+
+        var jang =  new CheckWeight("장보리",168,62);
+        var park = new CheckWeight("박달재",180,88);
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(park.getResult(),"<br>");
+
+        document.write(jang.getResult === park.getResult);
+    </script> -->
+
+</head>
+<body>
+    
+</body>
+</html>
